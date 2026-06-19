@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Яков Петров — Продуктовый дизайнер</title>
 <meta name="description" content="Проектирую продукты, которые сложно объяснить — и делаю их очевидными." />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -34,7 +34,7 @@ a{ color:inherit; text-decoration:none; }
 .site-header{ position:fixed; top:0; left:0; right:0; z-index:100; pointer-events:none;
   transform:translateZ(0); -webkit-backface-visibility:hidden; }
 .site-header::before{ content:""; position:absolute; left:0; right:0; top:0;
-  height:calc(96px + env(safe-area-inset-top));
+  height:max(140px, calc(96px + env(safe-area-inset-top)));
   background:#f7f7fa; }
 .header-inner{ position:relative; width:552px; max-width:100%; margin:0 auto; padding:calc(32px + env(safe-area-inset-top)) 0 0;
   display:flex; align-items:flex-start; justify-content:space-between;
@@ -244,7 +244,7 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
     <div class="lang-toggle" role="group" aria-label="Language">
       <button type="button" data-lang="ru">rus</button><span class="sep"> / </span><button type="button" data-lang="en">eng</button>
     </div>
-    <div class="morph-ava"><img src="assets/avatar.jpg" alt="Yakov Petrov" /></div>
+    <div class="morph-ava"><picture><source type="image/avif" srcset="assets/avatar.avif" /><img src="assets/avatar.jpg" alt="Yakov Petrov" decoding="async" /></picture></div>
     <p class="topbar-links"><a href="https://www.linkedin.com/in/yakov-petrov/" target="_blank" rel="noopener">linkedin</a> / <a href="https://t.me/yakovvortep" target="_blank" rel="noopener">telegram</a></p>
   </div>
 </header>
@@ -296,9 +296,9 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
         </div>
       </div>
       <div class="shots">
-        <img src="assets/ios1.png" alt="" />
-        <img src="assets/ios2.png" alt="" />
-        <img src="assets/ios3.png" alt="" />
+        <picture><source type="image/avif" srcset="assets/ios1.avif" /><img src="assets/ios1.png" alt="" decoding="async" loading="lazy" /></picture>
+        <picture><source type="image/avif" srcset="assets/ios2.avif" /><img src="assets/ios2.png" alt="" decoding="async" loading="lazy" /></picture>
+        <picture><source type="image/avif" srcset="assets/ios3.avif" /><img src="assets/ios3.png" alt="" decoding="async" loading="lazy" /></picture>
       </div>
     </div>
     <span class="seecase-expand"><span class="t" data-ru="Смотреть кейс" data-en="View case">Смотреть кейс</span><svg viewBox="0 0 24 14" fill="none" aria-hidden="true"><path d="M7 5l5 4 5-4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -318,9 +318,9 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
       </div>
 
       <div class="shots">
-        <img src="assets/e1.png" alt="" />
-        <img src="assets/e2.png" alt="" />
-        <img src="assets/e3.png" alt="" />
+        <picture><source type="image/avif" srcset="assets/e1.avif" /><img src="assets/e1.png" alt="" decoding="async" loading="lazy" /></picture>
+        <picture><source type="image/avif" srcset="assets/e2.avif" /><img src="assets/e2.png" alt="" decoding="async" loading="lazy" /></picture>
+        <picture><source type="image/avif" srcset="assets/e3.avif" /><img src="assets/e3.png" alt="" decoding="async" loading="lazy" /></picture>
       </div>
 
       <div class="exp-block">
@@ -330,9 +330,9 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
       </div>
 
       <div class="shots">
-        <img src="assets/e4.png" alt="" />
-        <img src="assets/e5.png" alt="" />
-        <img src="assets/e6.png" alt="" />
+        <picture><source type="image/avif" srcset="assets/e4.avif" /><img src="assets/e4.png" alt="" decoding="async" loading="lazy" /></picture>
+        <picture><source type="image/avif" srcset="assets/e5.avif" /><img src="assets/e5.png" alt="" decoding="async" loading="lazy" /></picture>
+        <picture><source type="image/avif" srcset="assets/e6.avif" /><img src="assets/e6.png" alt="" decoding="async" loading="lazy" /></picture>
       </div>
 
       <div class="exp-block insight">
@@ -340,7 +340,7 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
         <p class="quote" data-ru="“Вообще рынок и читатели тут особенные. Почти целиком женское комьюнити, которое читает запоем и выбирает книги по тропам и спайсу, а не по жанрам. Они читают десятки книг в месяц и легко платят за любимых авторов”" data-en="“The market and readers here are special. An almost entirely female community that binge-reads and picks books by tropes and spice, not by genre. They go through dozens of books a month and happily pay for favorite authors”">“Вообще рынок и читатели тут особенные. Почти целиком женское комьюнити, которое читает запоем и выбирает книги по тропам и спайсу, а не по жанрам. Они читают десятки книг в месяц и легко платят за любимых авторов”</p>
       </div>
 
-      <img class="collage" src="assets/collage1.png" alt="" />
+      <picture><source type="image/avif" srcset="assets/collage1.avif" /><img class="collage" src="assets/collage1.png" alt="" decoding="async" loading="lazy" /></picture>
 
       <div class="exp-block">
         <p class="em" data-ru="Спроектировал и вывел в тест два пути для платящих:" data-en="Designed and tested two paths for payers:">Спроектировал и вывел в тест два пути для платящих:</p>
@@ -357,9 +357,9 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
       </div>
 
       <div class="shots">
-        <img src="assets/e7.png" alt="" />
-        <img src="assets/e8.png" alt="" />
-        <img src="assets/e9.png" alt="" />
+        <picture><source type="image/avif" srcset="assets/e7.avif" /><img src="assets/e7.png" alt="" decoding="async" loading="lazy" /></picture>
+        <picture><source type="image/avif" srcset="assets/e8.avif" /><img src="assets/e8.png" alt="" decoding="async" loading="lazy" /></picture>
+        <picture><source type="image/avif" srcset="assets/e9.avif" /><img src="assets/e9.png" alt="" decoding="async" loading="lazy" /></picture>
       </div>
 
       <div class="exp-block">
@@ -380,7 +380,7 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
         <p data-ru="Помог Tempt впервые выйти в монетизацию — без просадки вовлечённости. Спроектировал десятки пэйволов и офферов, сделал ставку на social proof" data-en="Helped Tempt reach monetization for the first time — without dropping engagement. Designed dozens of paywalls and offers, betting on social proof">Помог Tempt впервые выйти в монетизацию — без просадки вовлечённости. Спроектировал десятки пэйволов и офферов, сделал ставку на social proof</p>
       </div>
 
-      <img class="collage" src="assets/collage2.png" alt="" />
+      <picture><source type="image/avif" srcset="assets/collage2.avif" /><img class="collage" src="assets/collage2.png" alt="" decoding="async" loading="lazy" /></picture>
     </div>
 
     <span class="seecase seecase-close"><span class="t" data-ru="Скрыть кейс" data-en="Hide case">Скрыть кейс</span> <svg class="eyes" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3.9375 10.6875C4.86948 10.6875 5.625 9.93198 5.625 9C5.625 8.06802 4.86948 7.3125 3.9375 7.3125C3.00552 7.3125 2.25 8.06802 2.25 9C2.25 9.93198 3.00552 10.6875 3.9375 10.6875Z" stroke-width="1.08" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.6875 10.6875C11.6195 10.6875 12.375 9.93198 12.375 9C12.375 8.06802 11.6195 7.3125 10.6875 7.3125C9.75552 7.3125 9 8.06802 9 9C9 9.93198 9.75552 10.6875 10.6875 10.6875Z" stroke-width="1.08" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.375 15.1875C14.239 15.1875 15.75 12.4173 15.75 9C15.75 5.58274 14.239 2.8125 12.375 2.8125C10.511 2.8125 9 5.58274 9 9C9 12.4173 10.511 15.1875 12.375 15.1875Z" stroke-width="1.08" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.625 15.1875C7.48896 15.1875 9 12.4173 9 9C9 5.58274 7.48896 2.8125 5.625 2.8125C3.76104 2.8125 2.25 5.58274 2.25 9C2.25 12.4173 3.76104 15.1875 5.625 15.1875Z" stroke-width="1.08" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -405,9 +405,9 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
       </div>
 
       <div class="shots">
-        <img src="assets/jggl1.png" alt="" />
-        <img src="assets/jggl2.png" alt="" />
-        <img src="assets/jggl3.png" alt="" />
+        <picture><source type="image/avif" srcset="assets/jggl1.avif" /><img src="assets/jggl1.png" alt="" decoding="async" loading="lazy" /></picture>
+        <picture><source type="image/avif" srcset="assets/jggl2.avif" /><img src="assets/jggl2.png" alt="" decoding="async" loading="lazy" /></picture>
+        <picture><source type="image/avif" srcset="assets/jggl3.avif" /><img src="assets/jggl3.png" alt="" decoding="async" loading="lazy" /></picture>
       </div>
     </div>
 
@@ -428,7 +428,7 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
           <p class="goal" data-ru="Добавить узнаваемости в бренде Delivio и освежить UI не меняя логику сервиса" data-en="boost the Delivio brand recognition and refresh the UI without changing the service logic">Добавить узнаваемости в бренде Delivio и освежить UI не меняя логику сервиса</p>
         </div>
       </div>
-      <img class="dlv-wide" src="assets/dlvwide.png" alt="Delivio" />
+      <picture><source type="image/avif" srcset="assets/dlvwide.avif" /><img class="dlv-wide" src="assets/dlvwide.png" alt="Delivio" decoding="async" loading="lazy" /></picture>
     </div>
     <a class="seecase store-link" href="https://delivio.by" target="_blank" rel="noopener" data-ru="старая версия, если интересно" data-en="old version, if curious">старая версия, если интересно</a>
   </div>
@@ -444,9 +444,9 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
     <div class="g-body">
       <div class="g-head"><span class="g-title">ATLETA WEB3</span><span class="g-since">since 2025</span></div>
       <div class="shots">
-        <img src="assets/atleta1.png" alt="ATLETA WEB3 — экран 1" loading="lazy" />
-        <img src="assets/atleta2.png" alt="ATLETA WEB3 — экран 2" loading="lazy" />
-        <img src="assets/atleta3.png" alt="ATLETA WEB3 — экран 3" loading="lazy" />
+        <picture><source type="image/avif" srcset="assets/atleta1.avif" /><img src="assets/atleta1.png" alt="ATLETA WEB3 — экран 1" loading="lazy" decoding="async" /></picture>
+        <picture><source type="image/avif" srcset="assets/atleta2.avif" /><img src="assets/atleta2.png" alt="ATLETA WEB3 — экран 2" loading="lazy" decoding="async" /></picture>
+        <picture><source type="image/avif" srcset="assets/atleta3.avif" /><img src="assets/atleta3.png" alt="ATLETA WEB3 — экран 3" loading="lazy" decoding="async" /></picture>
       </div>
     </div>
   </article>
@@ -455,8 +455,8 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
     <div class="g-body">
       <div class="g-head"><span class="g-title">Computer vision</span><span class="g-since">since 2025</span></div>
       <div class="g-stack">
-        <img src="assets/cv1.png" width="1000" height="746" alt="Computer vision — дашборд 1" loading="lazy" />
-        <img src="assets/cv2.png" width="1000" height="746" alt="Computer vision — дашборд 2" loading="lazy" />
+        <picture><source type="image/avif" srcset="assets/cv1.avif" /><img src="assets/cv1.png" width="1000" height="746" alt="Computer vision — дашборд 1" loading="lazy" decoding="async" /></picture>
+        <picture><source type="image/avif" srcset="assets/cv2.avif" /><img src="assets/cv2.png" width="1000" height="746" alt="Computer vision — дашборд 2" loading="lazy" decoding="async" /></picture>
       </div>
     </div>
   </article>
@@ -465,8 +465,8 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
     <div class="g-body">
       <div class="g-head"><span class="g-title">KeyScout</span><span class="g-since">since 2025</span></div>
       <div class="g-stack">
-        <img src="assets/keyscout1.png" width="1000" height="636" alt="KeyScout — дашборд 1" loading="lazy" />
-        <img src="assets/keyscout2.png" width="1000" height="1027" alt="KeyScout — дашборд 2" loading="lazy" />
+        <picture><source type="image/avif" srcset="assets/keyscout1.avif" /><img src="assets/keyscout1.png" width="1000" height="636" alt="KeyScout — дашборд 1" loading="lazy" decoding="async" /></picture>
+        <picture><source type="image/avif" srcset="assets/keyscout2.avif" /><img src="assets/keyscout2.png" width="1000" height="1027" alt="KeyScout — дашборд 2" loading="lazy" decoding="async" /></picture>
       </div>
     </div>
   </article>
