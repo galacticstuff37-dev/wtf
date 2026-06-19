@@ -94,7 +94,7 @@ a{ color:inherit; text-decoration:none; }
 .avatar{ width:94px; height:125px; overflow:hidden; flex:0 0 auto; }
 .avatar img{ width:100%; height:100%; object-fit:cover; object-position:center top; }
 
-.h1{ font-size:23px; line-height:32px; font-weight:400; letter-spacing:-0.46px; max-width:436px; }
+.h1{ font-size:28px; line-height:38px; font-weight:400; letter-spacing:-0.56px; max-width:520px; }
 .mbr{ display:none; }
 .kicker{ font-size:12px; line-height:normal; letter-spacing:-0.24px; color:#d5d5db; }
 .lede-block{ display:flex; flex-direction:column; align-items:center; gap:8px; width:100%; }
@@ -227,11 +227,8 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
 
 @media (max-width:540px){
   .hero{ padding:32px 16px; }
-  .view-collapsed{ padding:32px 20px; }
-  .view-expanded{ padding:32px 20px; }
   .lede{ white-space:normal; }
   .topbar{ padding-left:20px; padding-right:20px; }
-  .g-body{ padding:32px 20px 24px; }
   /* 16px inset from screen edges for header + cards */
   .header-inner{ padding-left:16px; padding-right:16px; }
   .case{ max-width:calc(100% - 32px); }
@@ -239,6 +236,21 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
   .mbr{ display:inline; }
   .h1{ font-size:18px; line-height:24px; }
   .morph-ava{ --m-small:0.2043; }   /* collapsed avatar 20% smaller on mobile (19.2/94) */
+
+  /* ---- mobile cards (Figma 65:44): tighter 16px padding/gaps, larger screen gaps ---- */
+  .view-collapsed{ padding:16px; gap:16px; }
+  .view-expanded{ padding:16px; gap:16px; }
+  .case-main, .exp-main{ gap:16px; }
+  .shots, .exp-shots{ gap:16px; }
+  .card{ padding:12px; gap:8px; }
+  .card .goal{ font-size:14px; letter-spacing:-0.28px; }
+  .exp-block{ padding:12px; }
+  .seecase, .seecase-expand{ font-size:14px; letter-spacing:-0.28px; }
+  .g-body{ padding:16px; gap:16px; }
+  /* wordmarks scaled down (tempt 136×48 → 80×28, others kept proportional) */
+  .case .wordmark.tempt{ width:80px; height:28px; }
+  .case .wordmark.jggl{ width:82.4px; height:23.1px; }
+  .case .wordmark.delivio{ width:89.9px; height:33.5px; }
 }
 </style>
 </head>
