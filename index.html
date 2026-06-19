@@ -32,11 +32,12 @@ a{ color:inherit; text-decoration:none; }
 .col{ width:552px; max-width:100%; margin:0 auto; padding-top:calc(185px + env(safe-area-inset-top)); }
 
 /* ---------- fixed header (gradient + rus/eng + scaling avatar + links) ---------- */
-.site-header{ position:fixed; top:0; left:0; right:0; z-index:100; pointer-events:none;
-  transform:translateZ(0); -webkit-backface-visibility:hidden; }
+.site-header{ position:fixed; top:0; left:0; right:0; z-index:100; pointer-events:none; }
+/* solid through the safe-area + header zone, soft fade only at the bottom edge */
 .site-header::before{ content:""; position:absolute; left:0; right:0; top:0;
-  height:max(140px, calc(96px + env(safe-area-inset-top)));
-  background:#f7f7fa; }
+  height:calc(120px + env(safe-area-inset-top));
+  background:linear-gradient(180deg, #f7f7fa 0,
+    #f7f7fa calc(100% - 26px), rgba(247,247,250,0) 100%); }
 .header-inner{ position:relative; width:552px; max-width:100%; margin:0 auto; padding:calc(32px + env(safe-area-inset-top)) 0 0;
   display:flex; align-items:flex-start; justify-content:space-between;
   font-size:14px; letter-spacing:-0.28px; color:#252547; pointer-events:none; }
