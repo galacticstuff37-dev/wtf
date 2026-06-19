@@ -19,9 +19,9 @@
    ========================================================= */
 
 *{ margin:0; padding:0; box-sizing:border-box; }
-html{ -webkit-text-size-adjust:100%; }
+html{ -webkit-text-size-adjust:100%; background:#f7f7fa; overscroll-behavior-y:none; }
 body{
-  background:#f7f7fa; color:#252547;
+  background:#f7f7fa; color:#252547; overscroll-behavior-y:none;
   font-family:"Inter Tight", system-ui, sans-serif; font-weight:400;
   -webkit-font-smoothing:antialiased;
 }
@@ -31,7 +31,8 @@ a{ color:inherit; text-decoration:none; }
 .col{ width:552px; max-width:100%; margin:0 auto; padding-top:calc(185px + env(safe-area-inset-top)); }
 
 /* ---------- fixed header (gradient + rus/eng + scaling avatar + links) ---------- */
-.site-header{ position:fixed; top:0; left:0; right:0; z-index:100; pointer-events:none; }
+.site-header{ position:fixed; top:0; left:0; right:0; z-index:100; pointer-events:none;
+  transform:translateZ(0); -webkit-backface-visibility:hidden; }
 .site-header::before{ content:""; position:absolute; left:0; right:0; top:0;
   height:calc(96px + env(safe-area-inset-top));
   background:linear-gradient(180deg,#f7f7fa 0, #f7f7fa calc(100% - 10px), rgba(247,247,250,0) 100%); }
@@ -61,7 +62,7 @@ a{ color:inherit; text-decoration:none; }
 
 /* ---------- gallery ---------- */
 /* page is a full-height flex column so the footer stays at the bottom */
-.page{ display:flex; flex-direction:column; min-height:100dvh; }
+.page{ display:flex; flex-direction:column; min-height:100svh; }
 .g-body{ display:flex; flex-direction:column; align-items:center; gap:24px; padding:32px 32px 24px; }
 .g-head{ display:flex; gap:24px; align-items:flex-start; width:100%;
   font-size:16px; line-height:normal; letter-spacing:-0.32px; }
