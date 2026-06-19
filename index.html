@@ -58,21 +58,16 @@ a{ color:inherit; text-decoration:none; }
 .section-tabs button:hover{ color:#252547; }
 .section-tabs .sep{ color:rgba(37,37,71,.4); }
 
-/* ---------- gallery empty state ---------- */
-/* page is a full-height flex column so the gallery can fill the leftover space */
+/* ---------- gallery ---------- */
+/* page is a full-height flex column so the footer stays at the bottom */
 .page{ display:flex; flex-direction:column; min-height:100dvh; }
-.view-gallery:not([hidden]){ display:flex; flex-direction:column; flex:1 1 auto; }
-.gallery-empty{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px;
-  padding:32px; text-align:center; flex:1 1 auto; }
-.empty-badge{ background:#54d15a; border-radius:48px; padding:12px;
-  display:inline-flex; align-items:center; justify-content:center; position:relative; }
-.empty-badge .cactus{ width:32px; height:32px; display:block; }
-.empty-text{ font-size:16px; line-height:24px; letter-spacing:-0.32px; color:#252547; max-width:436px; }
-/* decorative accent dots, positioned relative to the cactus badge (56×56) */
-.g-dot{ position:absolute; border-radius:50%; background:#54d15a; }
-.g-dot1{ width:5px; height:5px; left:56px; top:2px; }
-.g-dot2{ width:11px; height:11px; left:47px; top:55px; }
-.g-dot3{ width:7px; height:7px; left:-12px; top:46px; }
+.g-body{ display:flex; flex-direction:column; align-items:center; gap:24px; padding:32px 32px 24px; }
+.g-head{ display:flex; gap:24px; align-items:flex-start; width:100%;
+  font-size:16px; line-height:normal; letter-spacing:-0.32px; }
+.g-title{ flex:1 1 0; min-width:0; color:#252547; word-break:break-word; }
+.g-since{ flex:none; white-space:nowrap; color:rgba(37,37,71,.2); }
+.g-stack{ display:flex; flex-direction:column; gap:12px; width:100%; }
+.g-stack img{ width:100%; height:auto; display:block; border-radius:8px; object-fit:cover; }
 
 /* ---------- hero ---------- */
 .hero{
@@ -217,7 +212,7 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
   .view-expanded{ padding:32px 20px; }
   .lede{ white-space:normal; }
   .topbar{ padding-left:20px; padding-right:20px; }
-  .g-dot{ display:none; }
+  .g-body{ padding:32px 20px 24px; }
 }
 </style>
 </head>
@@ -422,12 +417,40 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
 
 </div><!-- /.view-cases -->
 
-<!-- ============ GALLERY (empty state) ============ -->
+<!-- ============ GALLERY ============ -->
 <div class="view-gallery" hidden>
-  <article class="case gallery-empty">
-    <div class="empty-badge"><img class="cactus" src="assets/cactus.svg" alt="" /><span class="g-dot g-dot1"></span><span class="g-dot g-dot2"></span><span class="g-dot g-dot3"></span></div>
-    <p class="empty-text" data-ru="Тут пока ничего нету, но скоро появятся всякие разные интерфейсы, админки, приложения, маркетинговые материалы" data-en="Nothing here yet, but soon there’ll be all sorts of interfaces, admin panels, apps and marketing materials">Тут пока ничего нету, но скоро появятся всякие разные интерфейсы, админки, приложения, маркетинговые материалы</p>
+
+  <article class="case">
+    <div class="g-body">
+      <div class="g-head"><span class="g-title">ATLETA WEB3</span><span class="g-since">since 2025</span></div>
+      <div class="shots">
+        <img src="assets/atleta1.png" alt="ATLETA WEB3 — экран 1" loading="lazy" />
+        <img src="assets/atleta2.png" alt="ATLETA WEB3 — экран 2" loading="lazy" />
+        <img src="assets/atleta3.png" alt="ATLETA WEB3 — экран 3" loading="lazy" />
+      </div>
+    </div>
   </article>
+
+  <article class="case">
+    <div class="g-body">
+      <div class="g-head"><span class="g-title">Computer vision</span><span class="g-since">since 2025</span></div>
+      <div class="g-stack">
+        <img src="assets/cv1.png" width="1000" height="746" alt="Computer vision — дашборд 1" loading="lazy" />
+        <img src="assets/cv2.png" width="1000" height="746" alt="Computer vision — дашборд 2" loading="lazy" />
+      </div>
+    </div>
+  </article>
+
+  <article class="case">
+    <div class="g-body">
+      <div class="g-head"><span class="g-title">KeyScout</span><span class="g-since">since 2025</span></div>
+      <div class="g-stack">
+        <img src="assets/keyscout1.png" width="1000" height="636" alt="KeyScout — дашборд 1" loading="lazy" />
+        <img src="assets/keyscout2.png" width="1000" height="1027" alt="KeyScout — дашборд 2" loading="lazy" />
+      </div>
+    </div>
+  </article>
+
 </div>
 
 <footer class="site">
