@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Яков Петров — Продуктовый дизайнер</title>
+<meta name="description" content="Проектирую продукты, которые сложно объяснить — и делаю их очевидными." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   Yakov Petrov — Portfolio
+   Built 1:1 from Figma (file jetdtYlVnvTp885eRczh0a, node 1:54).
+   Tokens: bg #f7f7fa · text #252547 · accent #c286ff ·
+   font Inter Tight · cards white r12 p16 · column 500 / pad 48.
+   ========================================================= */
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  background:#f7f7fa; color:#252547;
+  font-family:"Inter Tight", system-ui, sans-serif; font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+
+.col{ width:552px; max-width:100%; margin:0 auto; padding-top:185px; }
+
+/* ---------- fixed header (gradient + rus/eng + scaling avatar + links) ---------- */
+.site-header{ position:fixed; top:0; left:0; right:0; z-index:100; pointer-events:none; }
+.site-header::before{ content:""; position:absolute; left:0; right:0; top:0; height:120px;
+  background:linear-gradient(180deg,#f7f7fa 40%, rgba(247,247,250,.88) 66%, rgba(247,247,250,0)); }
+.header-inner{ position:relative; width:552px; max-width:100%; margin:0 auto; padding:32px 0 0;
+  display:flex; align-items:flex-start; justify-content:space-between;
+  font-size:14px; letter-spacing:-0.28px; color:#252547; pointer-events:none; }
+.header-inner .lang-toggle, .header-inner .topbar-links{ pointer-events:auto; position:relative; z-index:2; }
+.topbar-links a{ transition:color .2s ease; }
+.topbar-links a:hover{ color:#7827c4; }
+.morph-ava{ position:absolute; left:50%; top:32px; width:94px; height:125px; overflow:hidden;
+  transform:translateX(-50%); transform-origin:top center; pointer-events:auto; will-change:transform; }
+.morph-ava img{ width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+.lang-toggle{ display:inline-flex; font-size:14px; letter-spacing:-0.28px; line-height:normal; }
+.lang-toggle button{ font-family:inherit; font-size:14px; letter-spacing:-0.28px; background:none;
+  border:none; padding:0; cursor:pointer; color:rgba(37,37,71,.2); transition:color .2s ease; }
+.lang-toggle button.on{ color:#252547; }
+.lang-toggle button:hover{ color:#252547; }
+.lang-toggle .sep{ color:rgba(37,37,71,.2); }
+
+/* ---------- cases / gallery tabs (toggle-style) ---------- */
+.section-tabs{ text-align:center; margin:32px auto; font-size:16px; letter-spacing:-0.32px; line-height:normal; }
+.section-tabs button{ font-family:inherit; font-size:16px; letter-spacing:-0.32px; background:none;
+  border:none; padding:0; cursor:pointer; color:rgba(37,37,71,.4); transition:color .2s ease; }
+.section-tabs button.on{ color:#252547; }
+.section-tabs button:hover{ color:#252547; }
+.section-tabs .sep{ color:rgba(37,37,71,.4); }
+
+/* ---------- gallery empty state ---------- */
+/* page is a full-height flex column so the gallery can fill the leftover space */
+.page{ display:flex; flex-direction:column; min-height:100dvh; }
+.view-gallery:not([hidden]){ display:flex; flex-direction:column; flex:1 1 auto; }
+.gallery-empty{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px;
+  padding:32px; text-align:center; flex:1 1 auto; }
+.empty-badge{ background:#54d15a; border-radius:48px; padding:12px;
+  display:inline-flex; align-items:center; justify-content:center; position:relative; }
+.empty-badge .cactus{ width:32px; height:32px; display:block; }
+.empty-text{ font-size:16px; line-height:24px; letter-spacing:-0.32px; color:#252547; max-width:436px; }
+/* decorative accent dots, positioned relative to the cactus badge (56×56) */
+.g-dot{ position:absolute; border-radius:50%; background:#54d15a; }
+.g-dot1{ width:5px; height:5px; left:56px; top:2px; }
+.g-dot2{ width:11px; height:11px; left:47px; top:55px; }
+.g-dot3{ width:7px; height:7px; left:-12px; top:46px; }
+
+/* ---------- hero ---------- */
+.hero{
+  display:flex; flex-direction:column; align-items:center; gap:24px;
+  padding:48px 0 0; text-align:center;
+}
+.avatar{ width:94px; height:125px; overflow:hidden; flex:0 0 auto; }
+.avatar img{ width:100%; height:100%; object-fit:cover; object-position:center top; }
+
+.h1{ font-size:23px; line-height:32px; font-weight:400; letter-spacing:-0.46px; max-width:436px; }
+.kicker{ font-size:12px; line-height:normal; letter-spacing:-0.24px; color:#d5d5db; }
+.lede-block{ display:flex; flex-direction:column; align-items:center; gap:8px; width:100%; }
+.lede{ font-size:16px; line-height:20px; letter-spacing:-0.32px; white-space:nowrap; }
+
+.links{ font-size:14px; line-height:normal; letter-spacing:-0.28px; font-weight:700; }
+.links a{ transition:color .2s ease; }
+.links a:hover{ color:#7827c4; }
+
+.logos{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
+  gap:8.726px; align-self:stretch; min-height:28px; }
+.logos img{ flex:0 0 auto; }
+
+/* ---------- quote line ---------- */
+.quote-line{ display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center;
+  font-style:italic; font-size:14px; letter-spacing:-0.28px; margin:48px auto; }
+.quote-line .qline{ display:inline-flex; align-items:center; justify-content:center; min-height:18px; }
+.quote-line .caret{ display:inline-block; width:1px; height:15px; margin-left:1px;
+  background:#252547; animation:blink 1.05s step-end infinite; }
+@keyframes blink{ 0%,100%{ opacity:1; } 50%{ opacity:0; } }
+.quote-line .time{ color:rgba(37,37,71,.3); }
+@media (prefers-reduced-motion:reduce){ .quote-line .caret{ animation:none; } }
+
+/* ---------- footer ---------- */
+footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center;
+  font-size:12px; letter-spacing:-0.24px; color:rgba(37,37,71,.3); margin-top:32px; padding-bottom:48px; }
+
+/* ---------- case ---------- */
+.case{ width:552px; max-width:100%; margin:16px auto; background:#ffffff;
+  border-radius:24px; scroll-margin-top:16px; overflow:hidden; position:relative; }
+.view{ display:flex; flex-direction:column; align-items:center; }
+.view-collapsed{ padding:32px; gap:24px; }
+.view-expanded{ padding:32px; gap:32px; display:none; }
+.case.is-open .view-collapsed{ display:none; }
+.case.is-open .view-expanded{ display:flex; }
+.case.expandable .view-collapsed{ cursor:pointer; }
+.case-main{ display:flex; flex-direction:column; align-items:center; gap:24px; width:100%; }
+.case .wordmark{ display:block; }
+.case .wordmark.tempt{ width:136px; height:48px; }
+.case .wordmark.jggl{ width:140px; height:39.35px; }
+.case .wordmark.delivio{ width:152.78px; height:56.969px; }
+
+/* "Coming soon" corner ribbon */
+.ribbon-soon{ position:absolute; top:33px; left:calc(100% - 34px);
+  width:145px; height:24px; margin:-12px 0 0 -72.5px; transform:rotate(45deg);
+  background:#f50; color:#f7f7fa; font-weight:500; font-size:14px; letter-spacing:-0.28px;
+  display:flex; align-items:center; justify-content:center; white-space:nowrap; }
+
+.case .desc{ font-size:16px; line-height:normal; letter-spacing:-0.32px; text-align:center; }
+.exp-main .desc{ font-size:14px; letter-spacing:-0.28px; }
+
+.cards{ display:flex; flex-direction:column; gap:8px; width:100%; }
+.card{ background:#f7f7fa; border-radius:12px; padding:16px; display:flex; flex-direction:column; gap:5px; }
+.card .lab{ font-size:14px; opacity:.3; }
+.card .goal{ font-size:16px; letter-spacing:-0.32px; }
+.num{ font-weight:700; font-style:italic; color:#c286ff; }
+
+.shots{ display:flex; gap:7.769px; width:100%; }
+.shots img{ flex:1 1 0; min-width:0; height:auto; aspect-ratio:157 / 343;
+  border-radius:8px; object-fit:cover; }
+.dlv-wide{ width:100%; aspect-ratio:4096 / 2936; border-radius:8px; object-fit:cover; cursor:zoom-in; }
+
+.seecase{ display:inline-flex; align-items:center; gap:8px; font-size:16px; letter-spacing:-0.32px;
+  color:#c2c2dc; cursor:pointer; transition:color .2s ease; }
+.seecase:hover{ color:#7827c4; }
+/* collapsed t•mt CTA — "Смотреть кейс" with chevron-down below */
+.seecase-expand{ display:inline-flex; flex-direction:column; align-items:center; gap:2px;
+  font-size:16px; letter-spacing:-0.32px; color:#c2c2dc; cursor:pointer; transition:color .2s ease; }
+.seecase-expand:hover{ color:#7827c4; }
+.seecase-expand svg{ width:24px; height:14px; display:block; }
+.seecase-expand svg path{ stroke:currentColor; }
+.seecase.store-link{ color:#8181ff; text-decoration:underline; text-underline-offset:2px; }
+.seecase.store-link:hover{ color:#6a6aff; }
+.seecase .eyes{ width:18px; height:18px; flex:0 0 auto; }
+.seecase .eyes path{ stroke:currentColor; transition:stroke .2s ease; }
+
+/* JGGL web/app links */
+.jggl-links{ font-size:16px; letter-spacing:-0.32px; color:#c2c2dc; }
+.jggl-links a{ color:inherit; transition:color .2s ease; }
+.jggl-links a:hover{ color:#7827c4; }
+
+/* placeholder (upcoming) case */
+.ph-mark{ width:136px; height:48px; border-radius:10px; background:#ecebf3; }
+.case-soon .desc{ color:rgba(37,37,71,.45); }
+.shot-ph{ width:calc((100% - 15.538px) / 3); aspect-ratio:130 / 281.635; border-radius:8px;
+  background:linear-gradient(165deg,#eeedf6 0%,#e7e6ef 100%); background:#ebeaf2; }
+.seecase.soon{ color:#c2c2dc; cursor:default; }
+
+/* ---------- expanded case ---------- */
+.exp-main{ display:flex; flex-direction:column; align-items:center; gap:24px; width:100%; }
+.exp-block{ width:100%; background:#f7f7fa; border-radius:12px; padding:16px;
+  display:flex; flex-direction:column; gap:16px; align-items:flex-start;
+  font-size:16px; line-height:20px; letter-spacing:-0.32px; text-align:left; }
+.exp-block.tight{ gap:8px; }
+.exp-block.insight{ gap:8px; background:transparent; border:1px dashed #e4e4f1; }
+.exp-block .em{ font-weight:500; }
+.exp-block .quote{ color:#5e5b99; font-size:14px; line-height:18px; font-style:italic; letter-spacing:-0.28px; }
+.collage{ width:100%; height:auto; display:block; border-radius:12px; }
+.view-expanded .shots img{ border-radius:12px; }
+.exp-paths{ display:flex; flex-direction:column; gap:16px; width:100%;
+  font-size:16px; line-height:20px; letter-spacing:-0.32px; }
+.path{ display:flex; flex-direction:column; gap:4px; width:100%; }
+.path .sub{ color:rgba(37,37,71,.5); }
+.metrics{ display:flex; gap:16px; width:100%; }
+.metric{ flex:1 0 0; min-width:0; background:#ffffff; border-radius:8px; padding:12px;
+  display:flex; flex-direction:column; gap:4px; }
+.metric .ml{ opacity:.3; font-size:14px; }
+.metric .mv{ font-weight:600; font-size:16px; letter-spacing:-0.32px; }
+.note{ display:flex; flex-direction:column; gap:4px; width:100%;
+  font-size:16px; line-height:20px; letter-spacing:-0.32px; }
+.note .sub{ color:rgba(37,37,71,.6); }
+.exp-shots{ display:flex; gap:7.769px; width:100%; justify-content:center; }
+.exp-shots img{ flex:1 1 0; min-width:0; aspect-ratio:120 / 259;
+  height:auto; object-fit:cover; border-radius:8px; }
+/* OPEN (expanded) case: click a screenshot to view it enlarged, centered */
+.view-expanded .shots img, .view-expanded .exp-shots img{ cursor:zoom-in; }
+
+.lightbox{ position:fixed; inset:0; z-index:500; display:flex; align-items:center; justify-content:center;
+  padding:24px; background:rgba(247,247,250,.72); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
+  opacity:0; pointer-events:none; transition:opacity .3s ease; }
+.lightbox.open{ opacity:1; pointer-events:auto; }
+.lightbox img{ height:min(700px, 86vh); width:auto; max-width:92vw; border-radius:14px;
+  box-shadow:0 30px 80px -20px rgba(0,0,0,.55); transform:scale(.92);
+  transition:transform .3s cubic-bezier(.2,.8,.25,1); cursor:default; }
+.lightbox.open img{ transform:scale(1); }
+.lb-close{ position:fixed; top:24px; right:24px; width:40px; height:40px; border-radius:50%;
+  background:#f7f7fa; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  color:#252547; box-shadow:0 6px 20px rgba(0,0,0,.14); }
+.lb-close svg{ width:18px; height:18px; }
+
+@media (max-width:540px){
+  .hero, .view-collapsed{ padding:32px 20px; }
+  .view-expanded{ padding:32px 20px; }
+  .lede{ white-space:normal; }
+  .topbar{ padding-left:20px; padding-right:20px; }
+  .g-dot{ display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ FIXED HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="ru">rus</button><span class="sep"> / </span><button type="button" data-lang="en">eng</button>
+    </div>
+    <div class="morph-ava"><img src="assets/avatar.jpg" alt="Yakov Petrov" /></div>
+    <p class="topbar-links"><a href="https://www.linkedin.com/in/yakov-petrov/" target="_blank" rel="noopener">linkedin</a> / <a href="https://t.me/yakovvortep" target="_blank" rel="noopener">telegram</a></p>
+  </div>
+</header>
+
+<div class="page">
+
+<div class="col">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <p class="h1" data-ru="Яков Петров, продуктовый дизайнер. Сначала спрашиваю, потом проектирую." data-en="Yakov Petrov, product designer. I ask first, then design.">Яков Петров, продуктовый дизайнер. Сначала спрашиваю, потом проектирую.</p>
+
+    <p class="lede" data-ru="6+ лет в дизайне. «Давай поговорим» — тоже сойдёт за ТЗ" data-en="6+ years in design. “Let’s talk” works as a brief too.">6+ лет в дизайне. «Давай поговорим» — тоже сойдёт за ТЗ</p>
+
+    <div class="logos">
+      <img src="assets/logo1.svg" alt="" style="width:78.981px;height:28.433px" />
+      <img src="assets/logo2.svg" alt="" style="width:100.043px;height:28.433px" />
+      <img src="assets/logo3.svg" alt="" style="width:110.573px;height:28.433px" />
+      <img src="assets/logo4.svg" alt="" style="width:76.949px;height:28.35px" />
+      <img src="assets/logo5.svg" alt="" style="width:98.549px;height:28.35px" />
+    </div>
+  </header>
+
+</div>
+
+<!-- ============ QUOTE LINE ============ -->
+<p class="quote-line">
+  <span class="qline"><span class="t">«Встречают по UI провожают по UX-y»</span><span class="caret" aria-hidden="true"></span></span>
+</p>
+
+<!-- ============ CASES / GALLERY TABS ============ -->
+<div class="section-tabs" role="group" aria-label="Вид">
+  <button type="button" class="on" data-tab="cases" data-ru="Кейсы" data-en="Cases">Кейсы</button><span class="sep"> / </span><button type="button" data-tab="gallery" data-ru="Галерея" data-en="Gallery">Галерея</button>
+</div>
+
+<div class="view-cases">
+
+<!-- ============ CASE 01 — t•mt ============ -->
+<article class="case expandable" id="case-tempt">
+  <!-- collapsed -->
+  <div class="view view-collapsed">
+    <div class="case-main">
+      <img class="wordmark tempt" src="assets/tempt.svg" alt="t•mt" />
+      <p class="desc" data-ru="приложение для стриминга аудиокниг,<br>созданное специально для комьюнити indie-romance" data-en="an audiobook streaming app<br>built for the indie-romance community">приложение для стриминга аудиокниг,<br>созданное специально для комьюнити indie-romance</p>
+      <div class="cards">
+        <div class="card">
+          <p class="lab" data-ru="Цель" data-en="Goal">Цель</p>
+          <p class="goal" data-ru="запустить монетизацию с нуля и найти работающую модель, не потеряв вовлечённость" data-en="launch monetization from scratch and find a working model without losing engagement">запустить монетизацию с нуля и найти работающую модель, не потеряв вовлечённость</p>
+        </div>
+      </div>
+      <div class="shots">
+        <img src="assets/ios1.png" alt="" />
+        <img src="assets/ios2.png" alt="" />
+        <img src="assets/ios3.png" alt="" />
+      </div>
+    </div>
+    <span class="seecase-expand"><span class="t" data-ru="Смотреть кейс" data-en="View case">Смотреть кейс</span><svg viewBox="0 0 24 14" fill="none" aria-hidden="true"><path d="M7 5l5 4 5-4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+
+  <!-- expanded -->
+  <div class="view view-expanded">
+    <div class="exp-main">
+      <img class="wordmark tempt" src="assets/tempt.svg" alt="t•mt" />
+      <p class="desc" data-ru="приложение для стриминга аудиокниг,<br>созданное специально для комьюнити indie-romance" data-en="an audiobook streaming app<br>built for the indie-romance community">приложение для стриминга аудиокниг,<br>созданное специально для комьюнити indie-romance</p>
+
+      <div class="cards">
+        <div class="card">
+          <p class="lab" data-ru="Цель" data-en="Goal">Цель</p>
+          <p class="goal" data-ru="запустить монетизацию с нуля и найти работающую модель,<br>не потеряв вовлечённость" data-en="launch monetization from scratch and find a working model,<br>without losing engagement">запустить монетизацию с нуля и найти работающую модель,<br>не потеряв вовлечённость</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <img src="assets/e1.png" alt="" />
+        <img src="assets/e2.png" alt="" />
+        <img src="assets/e3.png" alt="" />
+      </div>
+
+      <div class="exp-block">
+        <p data-ru="База 500K, но продукт ещё не монетизировался." data-en="A base of 500K, but the product wasn’t monetized yet.">База 500K, но продукт ещё не монетизировался.</p>
+        <p data-ru="Задача была впервые ввести монетизацию, найти работающую модель и заложить базовое удержание платящих, не просев по вовлечённости." data-en="The task: introduce monetization for the first time, find a working model and set a baseline retention of payers — without losing engagement.">Задача была впервые ввести монетизацию, найти работающую модель и заложить базовое удержание платящих, не просев по вовлечённости.</p>
+        <p data-ru="Разобрал монетизацию конкурентов (FreeAM, Galatea и др.) — где подписка, где разовые покупки." data-en="Studied competitors’ monetization (FreeAM, Galatea, etc.) — where it’s subscription, where it’s one-off purchases.">Разобрал монетизацию конкурентов (FreeAM, Galatea и др.) — где подписка, где разовые покупки.</p>
+      </div>
+
+      <div class="shots">
+        <img src="assets/e4.png" alt="" />
+        <img src="assets/e5.png" alt="" />
+        <img src="assets/e6.png" alt="" />
+      </div>
+
+      <div class="exp-block insight">
+        <p data-ru="Инсайт по рынку и ЦА" data-en="Market &amp; audience insight">Инсайт по рынку и ЦА</p>
+        <p class="quote" data-ru="“Вообще рынок и читатели тут особенные. Почти целиком женское комьюнити, которое читает запоем и выбирает книги по тропам и спайсу, а не по жанрам. Они читают десятки книг в месяц и легко платят за любимых авторов”" data-en="“The market and readers here are special. An almost entirely female community that binge-reads and picks books by tropes and spice, not by genre. They go through dozens of books a month and happily pay for favorite authors”">“Вообще рынок и читатели тут особенные. Почти целиком женское комьюнити, которое читает запоем и выбирает книги по тропам и спайсу, а не по жанрам. Они читают десятки книг в месяц и легко платят за любимых авторов”</p>
+      </div>
+
+      <img class="collage" src="assets/collage1.png" alt="" />
+
+      <div class="exp-block">
+        <p class="em" data-ru="Спроектировал и вывел в тест два пути для платящих:" data-en="Designed and tested two paths for payers:">Спроектировал и вывел в тест два пути для платящих:</p>
+        <div class="exp-paths">
+          <div class="path">
+            <p data-ru="Подписка" data-en="Subscription">Подписка</p>
+            <p class="sub" data-ru="Безлимит за регулярный платёж, показывать пэйвол сразу после третьей бесплатной главы" data-en="Unlimited for a recurring payment, show the paywall right after the third free chapter">Безлимит за регулярный платёж, показывать пэйвол сразу после третьей бесплатной главы</p>
+          </div>
+          <div class="path">
+            <p data-ru="Бандлы —  try before you buy" data-en="Bundles —  try before you buy">Бандлы —  try before you buy</p>
+            <p class="sub" data-ru="Бесплатный вход → первые 3 главы бесплатно → покупка книги или всей серии бандлом со скидкой" data-en="Free entry → first 3 chapters free → buy the book or the whole series as a discounted bundle">Бесплатный вход → первые 3 главы бесплатно → покупка книги или всей серии бандлом со скидкой</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="shots">
+        <img src="assets/e7.png" alt="" />
+        <img src="assets/e8.png" alt="" />
+        <img src="assets/e9.png" alt="" />
+      </div>
+
+      <div class="exp-block">
+        <p class="em" data-ru="Тест на когортах и результаты" data-en="Cohort testing and results">Тест на когортах и результаты</p>
+        <p data-ru="Раскатывали модели на когорты пользователей и снимали данные на D7 / D15 / D30 — чтобы сравнивать удержание честно и видеть динамику, а не разовый срез." data-en="Rolled the models out to user cohorts and tracked data at D7 / D15 / D30 — to compare retention fairly and see the trend, not a one-off snapshot.">Раскатывали модели на когорты пользователей и снимали данные на D7 / D15 / D30 — чтобы сравнивать удержание честно и видеть динамику, а не разовый срез.</p>
+        <div class="metrics">
+          <div class="metric"><p class="ml" data-ru="Подписка D30" data-en="Subscription D30">Подписка D30</p><p class="mv">15%</p></div>
+          <div class="metric"><p class="ml" data-ru="Бандлы D30" data-en="Bundles D30">Бандлы D30</p><p class="mv">13%</p></div>
+        </div>
+        <div class="note">
+          <p class="sub" data-ru="Вовлечённость не просела:" data-en="Engagement held steady:">Вовлечённость не просела:</p>
+          <p class="em" data-ru="5ч/день в приложении, 13 книг/мес" data-en="5h/day in app, 13 books/mo">5ч/день в приложении, 13 книг/мес</p>
+        </div>
+      </div>
+
+      <div class="exp-block">
+        <p class="em" data-ru="В итоге" data-en="In the end">В итоге</p>
+        <p data-ru="Помог Tempt впервые выйти в монетизацию — без просадки вовлечённости. Спроектировал десятки пэйволов и офферов, сделал ставку на social proof" data-en="Helped Tempt reach monetization for the first time — without dropping engagement. Designed dozens of paywalls and offers, betting on social proof">Помог Tempt впервые выйти в монетизацию — без просадки вовлечённости. Спроектировал десятки пэйволов и офферов, сделал ставку на social proof</p>
+      </div>
+
+      <img class="collage" src="assets/collage2.png" alt="" />
+    </div>
+
+    <span class="seecase seecase-close"><span class="t" data-ru="Скрыть кейс" data-en="Hide case">Скрыть кейс</span> <svg class="eyes" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3.9375 10.6875C4.86948 10.6875 5.625 9.93198 5.625 9C5.625 8.06802 4.86948 7.3125 3.9375 7.3125C3.00552 7.3125 2.25 8.06802 2.25 9C2.25 9.93198 3.00552 10.6875 3.9375 10.6875Z" stroke-width="1.08" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.6875 10.6875C11.6195 10.6875 12.375 9.93198 12.375 9C12.375 8.06802 11.6195 7.3125 10.6875 7.3125C9.75552 7.3125 9 8.06802 9 9C9 9.93198 9.75552 10.6875 10.6875 10.6875Z" stroke-width="1.08" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.375 15.1875C14.239 15.1875 15.75 12.4173 15.75 9C15.75 5.58274 14.239 2.8125 12.375 2.8125C10.511 2.8125 9 5.58274 9 9C9 12.4173 10.511 15.1875 12.375 15.1875Z" stroke-width="1.08" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.625 15.1875C7.48896 15.1875 9 12.4173 9 9C9 5.58274 7.48896 2.8125 5.625 2.8125C3.76104 2.8125 2.25 5.58274 2.25 9C2.25 12.4173 3.76104 15.1875 5.625 15.1875Z" stroke-width="1.08" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+
+    <p class="links"><a href="https://www.linkedin.com/in/yakov-petrov/" target="_blank" rel="noopener">linkedin</a> / <a href="https://t.me/yakovvortep" target="_blank" rel="noopener">telegram</a></p>
+  </div>
+</article>
+
+<!-- ============ CASE 02 — JGGL ============ -->
+<article class="case">
+  <div class="view view-collapsed">
+    <div class="case-main">
+      <img class="wordmark jggl" src="assets/jggl.svg" alt="JGGL" />
+
+      <p class="desc" data-ru="приложение для создания и шаринга AI контента" data-en="an app for creating and sharing AI content">приложение для создания и шаринга AI контента</p>
+
+      <div class="cards">
+        <div class="card">
+          <p class="lab" data-ru="Цель" data-en="Goal">Цель</p>
+          <p class="goal" data-ru="разработать нетипичный UX для ленты постов и спроектировать голосовое взаимодействие с кнопкой JGGL" data-en="design an unconventional feed UX and a voice interaction with the JGGL button">разработать нетипичный UX для ленты постов и спроектировать голосовое взаимодействие с кнопкой JGGL</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <img src="assets/jggl1.png" alt="" />
+        <img src="assets/jggl2.png" alt="" />
+        <img src="assets/jggl3.png" alt="" />
+      </div>
+    </div>
+
+    <p class="jggl-links"><a href="https://jggl.ai" target="_blank" rel="noopener">web</a>/<a href="https://apps.apple.com/us/app/jggl-ai-generated-images/id6739490240" target="_blank" rel="noopener">app</a></p>
+  </div>
+  <span class="ribbon-soon" data-ru="Coming soon" data-en="Coming soon">Coming soon</span>
+</article>
+
+<!-- ============ CASE 03 — Delivio (coming soon) ============ -->
+<article class="case">
+  <div class="view view-collapsed">
+    <div class="case-main">
+      <img class="wordmark delivio" src="assets/delivio.svg" alt="Delivio" />
+      <p class="desc" data-ru="сервис доставки еды с магазинов и ресторанов" data-en="a food delivery service from stores and restaurants">сервис доставки еды с магазинов и ресторанов</p>
+      <div class="cards">
+        <div class="card">
+          <p class="lab" data-ru="Цель" data-en="Goal">Цель</p>
+          <p class="goal" data-ru="Добавить узнаваемости в бренде Delivio и освежить UI не меняя логику сервиса" data-en="boost the Delivio brand recognition and refresh the UI without changing the service logic">Добавить узнаваемости в бренде Delivio и освежить UI не меняя логику сервиса</p>
+        </div>
+      </div>
+      <img class="dlv-wide" src="assets/dlvwide.png" alt="Delivio" />
+    </div>
+    <span class="seecase" data-ru="старая версия, если интересно" data-en="old version, if curious" style="cursor:default">старая версия, если интересно</span>
+  </div>
+  <span class="ribbon-soon" data-ru="Coming soon" data-en="Coming soon">Coming soon</span>
+</article>
+
+</div><!-- /.view-cases -->
+
+<!-- ============ GALLERY (empty state) ============ -->
+<div class="view-gallery" hidden>
+  <article class="case gallery-empty">
+    <div class="empty-badge"><img class="cactus" src="assets/cactus.svg" alt="" /><span class="g-dot g-dot1"></span><span class="g-dot g-dot2"></span><span class="g-dot g-dot3"></span></div>
+    <p class="empty-text" data-ru="Тут пока ничего нету, но скоро появятся всякие разные интерфейсы, админки, приложения, маркетинговые материалы" data-en="Nothing here yet, but soon there’ll be all sorts of interfaces, admin panels, apps and marketing materials">Тут пока ничего нету, но скоро появятся всякие разные интерфейсы, админки, приложения, маркетинговые материалы</p>
+  </article>
+</div>
+
+<footer class="site">
+  <span data-ru="Портфолио собрано с помощью Claude code и самостоятельно залито на хостинг" data-en="Portfolio built with Claude Code and deployed to hosting by myself">Портфолио собрано с помощью Claude code и самостоятельно залито на хостинг</span>
+  <span>Yakov Petrov © 2026</span>
+</footer>
+
+</div><!-- /.page -->
+
+<script>
+/* ---------- language toggle (rus / eng) + dynamic quote ---------- */
+(function(){
+  var nodes = document.querySelectorAll('[data-ru]');
+  var buttons = document.querySelectorAll('.lang-toggle button');
+  var lang = 'ru';
+
+  /* typewriter quote line */
+  var QUOTES = [
+    { ru:'«Встречают по UI провожают по UX-y»', en:'“Judged by the UI, remembered by the UX”' },
+    { ru:'«надо со шрифтами еще поиграться»',    en:'“gotta play with the fonts some more”' },
+    { ru:'«Claude всех заменит»',                en:'“Claude will replace everyone”' }
+  ];
+  var qLine = document.querySelector('.quote-line');
+  var qText = qLine && qLine.querySelector('.t');
+  var reduceQ = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var qi = 0, ci = 0, deleting = false, qTimer = null;
+  function full(){ return QUOTES[qi][lang] || QUOTES[qi].ru; }
+  function tick(){
+    var s = full();
+    if(!deleting){
+      ci++;
+      qText.textContent = s.slice(0, ci);
+      if(ci >= s.length){ deleting = true; qTimer = setTimeout(tick, 2000); return; }   // hold full
+      qTimer = setTimeout(tick, 52 + Math.random() * 50);
+    } else {
+      ci--;
+      qText.textContent = s.slice(0, ci);
+      if(ci <= 0){ deleting = false; qi = (qi + 1) % QUOTES.length; qTimer = setTimeout(tick, 320); return; }
+      qTimer = setTimeout(tick, 26);
+    }
+  }
+  function restartQuote(){
+    if(!qText) return;
+    clearTimeout(qTimer);
+    if(reduceQ){ qText.textContent = full(); return; }   // static for reduced motion
+    ci = 0; deleting = false; qText.textContent = '';
+    qTimer = setTimeout(tick, 260);
+  }
+
+  function apply(l){
+    lang = l;
+    document.documentElement.lang = l;
+    nodes.forEach(function(el){
+      var v = el.getAttribute('data-' + l);
+      if(v != null) el.innerHTML = v;
+    });
+    document.title = l === 'en'
+      ? 'Yakov Petrov — Product Designer'
+      : 'Яков Петров — Продуктовый дизайнер';
+    buttons.forEach(function(b){ b.classList.toggle('on', b.dataset.lang === l); });
+    restartQuote();
+    try{ localStorage.setItem('lang', l); }catch(e){}
+  }
+  var saved = null; try{ saved = localStorage.getItem('lang'); }catch(e){}
+  buttons.forEach(function(b){ b.addEventListener('click', function(){ apply(b.dataset.lang); }); });
+  apply(saved || 'ru');
+})();
+
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.case.expandable').forEach(function(caseEl){
+    var collapsed = caseEl.querySelector('.view-collapsed');
+    var closeBtn  = caseEl.querySelector('.view-expanded .seecase-close');
+
+    function animate(open){
+      var startH = caseEl.offsetHeight;          // measure current (before swap)
+      caseEl.classList.toggle('is-open', open);  // swap content → natural height = endH
+      if(!open) caseEl.scrollIntoView({behavior:'smooth', block:'start'}); // anchor to card start on close
+      if(reduce) return;
+      var endH = caseEl.offsetHeight;
+      if(startH === endH) return;
+      if(caseEl._anim) caseEl._anim.cancel();
+      caseEl._anim = caseEl.animate(
+        [{ height: startH + 'px' }, { height: endH + 'px' }],
+        { duration: open ? 560 : 360, easing: open ? 'cubic-bezier(.45,.05,.25,1)' : 'cubic-bezier(.2,.8,.25,1)' }
+      );                                          // reverts to auto height on finish
+    }
+
+    if(collapsed) collapsed.addEventListener('click', function(){ animate(true); });
+    if(closeBtn)  closeBtn.addEventListener('click', function(e){ e.stopPropagation(); animate(false); });
+  });
+})();
+
+/* ---------- screenshot lightbox (click to enlarge, centered) ---------- */
+(function(){
+  var imgs = document.querySelectorAll('.view-expanded .shots img, .view-expanded .exp-shots img, .dlv-wide');
+  if(!imgs.length) return;
+  var lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.innerHTML = '<button class="lb-close" type="button" aria-label="Закрыть">' +
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
+    '</button><img alt="">';
+  document.body.appendChild(lb);
+  var lbImg = lb.querySelector('img');
+  function open(src){ lbImg.src = src; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function close(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
+  imgs.forEach(function(im){
+    im.addEventListener('click', function(e){ e.stopPropagation(); open(im.currentSrc || im.src); });
+  });
+  lb.addEventListener('click', function(e){ if(e.target === lb || e.target.closest('.lb-close')) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && lb.classList.contains('open')) close(); });
+})();
+
+/* ---------- scaling avatar in the fixed header ---------- */
+(function(){
+  var ava = document.querySelector('.morph-ava');
+  if(!ava) return;
+  var SMALL = 24 / 94;                 // header size / hero size
+  function onScroll(){
+    var p = Math.min(window.scrollY / 150, 1);   // 0 (top) → 1 (scrolled)
+    var scale = 1 - p * (1 - SMALL);             // 1 → 0.255
+    var ty = 52 - p * 54;                        // top 84 → top 30
+    ava.style.transform = 'translateX(-50%) translateY(' + ty.toFixed(1) + 'px) scale(' + scale.toFixed(4) + ')';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+/* ---------- cases / gallery tabs ---------- */
+(function(){
+  var tabs = document.querySelectorAll('.section-tabs button');
+  var casesView = document.querySelector('.view-cases');
+  var galleryView = document.querySelector('.view-gallery');
+  tabs.forEach(function(b){
+    b.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.classList.toggle('on', x === b); });
+      var gallery = b.dataset.tab === 'gallery';
+      if(casesView) casesView.hidden = gallery;
+      if(galleryView) galleryView.hidden = !gallery;
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
