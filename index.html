@@ -222,9 +222,6 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
   /* title + subtitle forced to two lines */
   .mbr{ display:inline; }
   .h1{ font-size:18px; line-height:24px; }
-  /* compact header (−20%) once scrolled */
-  .lang-toggle, .lang-toggle button, .topbar-links{ transition:font-size .2s ease; }
-  body.scrolled .lang-toggle, body.scrolled .lang-toggle button, body.scrolled .topbar-links{ font-size:11.2px; }
 }
 </style>
 </head>
@@ -587,7 +584,6 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
     var scale = 1 - p * (1 - small);
     var ty = 52 - p * 54;                        // top 84 → top 30
     ava.style.transform = 'translateX(-50%) translateY(' + ty.toFixed(1) + 'px) scale(' + scale.toFixed(4) + ')';
-    document.body.classList.toggle('scrolled', window.scrollY > 40);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   if(mq.addEventListener) mq.addEventListener('change', onScroll);
