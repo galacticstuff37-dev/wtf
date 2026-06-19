@@ -579,16 +579,22 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
   var ava = document.querySelector('.morph-ava');
   if(!ava) return;
   var mq = window.matchMedia('(max-width:540px)');
-  function onScroll(){
+  var ticking = false;
+  function update(){
+    ticking = false;
     var p = Math.min(window.scrollY / 150, 1);   // 0 (top) → 1 (scrolled)
     var small = (mq.matches ? 19.2 : 24) / 94;   // collapsed avatar — 20% smaller header on mobile
     var scale = 1 - p * (1 - small);
     var ty = 52 - p * 54;                        // top 84 → top 30
-    ava.style.transform = 'translateX(-50%) translateY(' + ty.toFixed(1) + 'px) scale(' + scale.toFixed(4) + ')';
+    // translate3d → own GPU layer; updated once per frame for a smooth scale
+    ava.style.transform = 'translate3d(-50%, ' + ty.toFixed(1) + 'px, 0) scale(' + scale.toFixed(4) + ')';
+  }
+  function onScroll(){
+    if(!ticking){ ticking = true; requestAnimationFrame(update); }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
-  if(mq.addEventListener) mq.addEventListener('change', onScroll);
-  onScroll();
+  if(mq.addEventListener) mq.addEventListener('change', update);
+  update();
 })();
 
 /* ---------- cases / gallery tabs ---------- */
