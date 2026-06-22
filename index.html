@@ -232,9 +232,9 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
   /* 16px inset from screen edges for header + cards */
   .header-inner{ padding-left:16px; padding-right:16px; }
   .case{ max-width:calc(100% - 32px); }
-  /* title + subtitle forced to two lines */
+  /* subtitle gets a clean two-line break; title 23px wraps to 3 lines (Figma 64:115) */
   .mbr{ display:inline; }
-  .h1{ font-size:18px; line-height:24px; }
+  .h1{ font-size:23px; line-height:32px; letter-spacing:-0.46px; }
   .morph-ava{ --m-small:0.2043; }   /* collapsed avatar 20% smaller on mobile (19.2/94) */
 
   /* ---- mobile cards (Figma 65:44): tighter 16px padding/gaps, larger screen gaps ---- */
@@ -273,7 +273,7 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
 
   <!-- ============ HERO ============ -->
   <header class="hero">
-    <p class="h1" data-ru="Яков Петров, продуктовый дизайнер. <br class='mbr'>Сначала спрашиваю, потом проектирую." data-en="Yakov Petrov, product designer. <br class='mbr'>I ask first, then design.">Яков Петров, продуктовый дизайнер. <br class="mbr">Сначала спрашиваю, потом проектирую.</p>
+    <p class="h1" data-ru="Яков Петров, продуктовый дизайнер. Сначала спрашиваю, потом проектирую." data-en="Yakov Petrov, product designer. I ask first, then design.">Яков Петров, продуктовый дизайнер. Сначала спрашиваю, потом проектирую.</p>
 
     <p class="lede" data-ru="6+ лет в дизайне. <br class='mbr'>«Давай поговорим» — тоже сойдёт за ТЗ" data-en="6+ years in design. <br class='mbr'>“Let’s talk” works as a brief too.">6+ лет в дизайне. <br class="mbr">«Давай поговорим» — тоже сойдёт за ТЗ</p>
 
