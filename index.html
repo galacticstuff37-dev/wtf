@@ -160,12 +160,10 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
 .seecase{ display:inline-flex; align-items:center; gap:8px; font-size:16px; letter-spacing:-0.32px;
   color:#c2c2dc; cursor:pointer; transition:color .2s ease; }
 .seecase:hover{ color:#7827c4; }
-/* collapsed t•mt CTA — "Смотреть кейс" with chevron-down below */
-.seecase-expand{ display:inline-flex; flex-direction:column; align-items:center; gap:2px;
+/* collapsed t•mt CTA — "Смотреть кейс" (text only, per Figma) */
+.seecase-expand{ display:inline-flex; align-items:center; justify-content:center;
   font-size:16px; letter-spacing:-0.32px; color:#c2c2dc; cursor:pointer; transition:color .2s ease; }
 .seecase-expand:hover{ color:#7827c4; }
-.seecase-expand svg{ width:24px; height:14px; display:block; }
-.seecase-expand svg path{ stroke:currentColor; }
 .seecase.store-link{ color:#8181ff; text-decoration:underline; text-underline-offset:2px; }
 .seecase.store-link:hover{ color:#6a6aff; }
 .seecase .eyes{ width:18px; height:18px; flex:0 0 auto; }
@@ -314,7 +312,7 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
         <picture><source type="image/avif" srcset="assets/ios3.avif" /><img src="assets/ios3.png" alt="" decoding="async" loading="lazy" /></picture>
       </div>
     </div>
-    <span class="seecase-expand"><span class="t" data-ru="Смотреть кейс" data-en="View case">Смотреть кейс</span><svg viewBox="0 0 24 14" fill="none" aria-hidden="true"><path d="M7 5l5 4 5-4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="seecase-expand"><span class="t" data-ru="Смотреть кейс" data-en="View case">Смотреть кейс</span></span>
   </div>
 
   <!-- expanded -->
