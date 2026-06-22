@@ -237,20 +237,15 @@ footer.site{ display:flex; flex-direction:column; align-items:center; gap:8px; t
   .h1{ font-size:23px; line-height:32px; letter-spacing:-0.46px; }
   .morph-ava{ --m-small:0.2043; }   /* collapsed avatar 20% smaller on mobile (19.2/94) */
 
-  /* ---- mobile cards (Figma 65:44): tighter 16px padding/gaps, larger screen gaps ---- */
-  .view-collapsed{ padding:16px; gap:16px; }
-  .view-expanded{ padding:16px; gap:16px; }
-  .case-main, .exp-main{ gap:16px; }
-  .shots, .exp-shots{ gap:16px; }
-  .card{ padding:12px; gap:8px; }
-  .card .goal{ font-size:14px; letter-spacing:-0.28px; }
-  .exp-block{ padding:12px; }
-  .seecase, .seecase-expand{ font-size:14px; letter-spacing:-0.28px; }
-  .g-body{ padding:16px; gap:16px; }
-  /* wordmarks scaled down (tempt 136×48 → 80×28, others kept proportional) */
-  .case .wordmark.tempt{ width:80px; height:28px; }
-  .case .wordmark.jggl{ width:82.4px; height:23.1px; }
-  .case .wordmark.delivio{ width:89.9px; height:33.5px; }
+  /* ---- mobile cards (Figma 64:115): only the card padding tightens to 16px and the
+     wordmarks shrink to 99px wide. All gaps/paddings/fonts stay at desktop values:
+     card content gap 24, screens gap 7.769, goal box padding 16, fonts 16. ---- */
+  .view-collapsed{ padding:16px; }
+  .view-expanded{ padding:16px; }
+  .g-body{ padding:16px; }
+  .case .wordmark.tempt{ width:99px; height:34.94px; }
+  .case .wordmark.jggl{ width:99px; height:27.82px; }
+  .case .wordmark.delivio{ width:99px; height:36.91px; }
 }
 </style>
 </head>
